@@ -1,0 +1,42 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+type: pipeline
+
+display_name: SPIRO Model Pipeline
+description: A pipeline for preprocessing, training, and evaluating a model
+
+settings:
+  default_compute: azureml:cpu-cluster
+
+outputs:
+  final_pipeline_output:
+    mode: rw_mount
+
+jobs:
+  data_preprocessing:
+    type: command
+    component: ./data_preprocessing.yml
+    inputs:
+      data_input:
+        type: uri_file
+        path: ./data/dataset1.csv
+    outputs:
+      preprocessed_data:
+        mode: rw_mount
+
+  model_training:
+    type: command
+    component: ./model_training.yml
+    inputs:
+      preprocessed_data: ${{parent.jobs.data_preprocessing.outputs.preprocessed_data}}
+    outputs:
+      model_output:
+        mode: rw_mount
+
+  model_evaluation:
+    type: command
+    component: ./model_evaluation.yml
+    inputs:
+      model_input: ${{parent.jobs.model_training.outputs.model_output}}
+      preprocessed_data: ${{parent.jobs.data_preprocessing.outputs.preprocessed_data}}
+    outputs:
+      evaluation_output: ${{parent.outputs.final_pipeline_output}}

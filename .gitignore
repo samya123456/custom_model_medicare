@@ -5,7 +5,11 @@ __pycache__/
 
 # C extensions
 *.so
-
+/data
+/azure_ml/data/*
+/MEDICAIDCOMMERCIAL
+/MEDICAREDUALS
+/plots
 # Distribution / packaging
 .Python
 build/

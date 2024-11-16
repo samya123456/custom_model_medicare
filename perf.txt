@@ -1,0 +1,88 @@
+
+MEDICAIDCOMMERCIAL:
+===================
+
+Logistic Regression - Accuracy: 0.9761, Precision: 0.9650, Recall: 0.9761, F1 Score: 0.9657
+
+LightGBM - Accuracy: 0.9763, Precision: 0.9669, Recall: 0.9763, F1 Score: 0.9663
+
+XGBoost - Accuracy: 0.9764, Precision: 0.9674, Recall: 0.9764, F1 Score: 0.9664
+
+PyTorch Model - Accuracy: 0.9764, Precision: 0.9671, Recall: 0.9764, F1 Score: 0.9667
+
+Keras Model - Accuracy: 0.9763, Precision: 0.9688, Recall: 0.9763, F1 Score: 0.9649
+
+Random Forest - 
+  Accuracy: 0.9751, Precision: 0.9630, Recall: 0.9751, F1 Score: 0.9663
+  
+==================================================
+nrows=1000:
+Random Forest - Accuracy: 0.9838, Precision: 0.9702, Recall: 0.9850, F1 Score: 0.9776
+
+nrows=10000:
+Random Forest - Accuracy: 0.9760, Precision: 0.9526, Recall: 0.9755, F1 Score: 0.9639
+
+nrows=100000:
+Random Forest - Accuracy: 0.9758, Precision: 0.9580, Recall: 0.9755, F1 Score: 0.9652
+
+nrows=1000000:
+Random Forest - Accuracy: 0.9757, Precision: 0.9631, Recall: 0.9757, F1 Score: 0.9664
+
+
+
+
+After SMOTE:
+===========
+nrows=10000
+Random Forest - Accuracy: 0.9748, Precision: 0.9570, Recall: 0.9740, F1 Score: 0.9640
+ROC AUC:
+Random Forest - Accuracy: 0.8500, Precision: 0.9570, Recall: 0.9740, F1 Score: 0.9640
+
+nrows=100000
+Random Forest - Accuracy: 0.9730, Precision: 0.9582, Recall: 0.9736, F1 Score: 0.9648
+
+nrows=1000000:
+Random Forest - Accuracy: 0.9630, Precision: 0.9578, Recall: 0.9621, F1 Score: 0.9599
+
+
+
+
+MEDICAREDUALS:
+==============
+
+Logistic Regression - Accuracy: 0.8308, Precision: 0.7986, Recall: 0.8309, F1 Score: 0.7868
+
+LightGBM - Accuracy: 0.8337, Precision: 0.8047, Recall: 0.8338, F1 Score: 0.7926
+
+XGBoost - Accuracy: 0.8341, Precision: 0.8053, Recall: 0.8342, F1 Score: 0.7941
+
+PyTorch Model - Accuracy: 0.8339, Precision: 0.8048, Recall: 0.8339, F1 Score: 0.7936
+
+Keras Model - Accuracy: 0.8338, Precision: 0.8042, Recall: 0.8338, F1 Score: 0.7965
+
+Random Forest - 
+  Accuracy: 0.8337, Precision: 0.8042, Recall: 0.8341, F1 Score: 0.7967
+
+==============================================================
+nrows=1000:
+Random Forest - Accuracy: 0.7957, Precision: 0.7209, Recall: 0.7700, F1 Score: 0.7316
+
+nrows=10000:
+Random Forest - Accuracy: 0.7900, Precision: 0.7729, Recall: 0.7930, F1 Score: 0.7782
+ROC AUC:
+Random Forest - Accuracy: 0.7366, Precision: 0.7619, Recall: 0.7803, F1 Score: 0.7683
+
+nrows=100000:
+Random Forest - Accuracy: 0.8115, Precision: 0.7754, Recall: 0.8079, F1 Score: 0.7826
+
+nrows=1000000:
+Random Forest - Accuracy: 0.8220, Precision: 0.7868, Recall: 0.8227, F1 Score: 0.7894
+
+
+After SMOTE:
+=============
+nrows=100000:
+Accuracy: 0.7690, Precision: 0.7598, Recall: 0.7613, F1 Score: 0.7606
+
+nrows=1000000:
+Random Forest - Accuracy: 0.7388, Precision: 0.7771, Recall: 0.7371, F1 Score: 0.7534

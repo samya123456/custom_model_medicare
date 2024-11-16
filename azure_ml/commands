@@ -1,0 +1,4 @@
+az login
+az account set --subscription "<your-subscription-id>"
+az ml workspace create --name <workspace_name> --resource-group <resource_group> --location <location>
+az ml compute create --name cpu-cluster --size STANDARD_DS11_V2 --min-instances 0 --max-instances 4 --type AmlCompute

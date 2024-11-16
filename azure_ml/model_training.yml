@@ -1,0 +1,20 @@
+$schema: https://azuremlschemas.azureedge.net/latest/component.schema.json
+type: command
+
+name: Model Training
+description: Component for training a machine learning model.
+inputs:
+  preprocessed_data:
+    type: uri_file
+    description: The preprocessed data file.
+outputs:
+  model_output:
+    type: uri_folder
+    description: Folder where the trained model will be saved.
+code: ./componentB
+command: >
+  python model_training.py
+  --input_data ${{inputs.preprocessed_data}}
+  --output_model ${{outputs.model_output}}
+environment:
+  conda_file: ./env/environment.yml

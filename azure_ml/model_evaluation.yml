@@ -1,0 +1,24 @@
+$schema: https://azuremlschemas.azureedge.net/latest/component.schema.json
+type: command
+
+name: Model Evaluation
+description: Component for evaluating the trained model.
+inputs:
+  model_input:
+    type: uri_file
+    description: The trained model file.
+  preprocessed_data:
+    type: uri_file
+    description: The preprocessed data file.
+outputs:
+  evaluation_output:
+    type: uri_folder
+    description: Folder to save evaluation results.
+code: ./model_evaluation
+command: >
+  python model_evaluation.py
+  --input_model ${{inputs.model_input}}
+  --input_data ${{inputs.preprocessed_data}}
+  --output_evaluation ${{outputs.evaluation_output}}
+environment:
+  conda_file: ./env/environment.yml

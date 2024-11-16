@@ -1,0 +1,20 @@
+
+1) converts probabilities to binary predictions using the threshold. If a probability is greater than or equal to 0.154645, it’s classified as 1; otherwise, it’s 0.
+
+2) auc_score_test = roc_auc_score(y_test, predicted_proba_test[:, 1]) vs  accuracy = cross_val_score(clf, X_train, y_train, cv=5, scoring='roc_auc').mean():
+
+	i) cross_val_score with cv=5 performs 5-fold cross-validation, meaning it splits the data into five subsets, trains the model on four, and tests on one, iterating this process across all subsets.
+
+	Using a single roc_auc_score on just one test set may not represent the model's behavior on other data, especially in cases of high variance or class imbalance.
+	
+	ii) By using cross-validation, we avoid overfitting to a specific test set, ensuring that performance metrics reflect how well the model will likely perform on unseen data. Evaluating on one test set (like roc_auc_score(y_test, predicted_proba_test[:, 1])) might inflate or deflate metrics based on that specific data.
+	
+3) recall_score_test = len(df_test[(df_test['y_test']==1) & (df_test['y_test_pred']==1)]) / len(df_test[df_test['y_test']==1]) might be incorrect
+
+	i) Lacks Weighted Averaging: It calculates recall only for class 1, ignoring other classes and thus not reflecting a weighted average across classes.
+	
+	ii) No Handling of Multiclass: This formula assumes a binary classification (class 1), while recall_score with average='weighted' handles multiple classes.
+	
+	iii) Manual Error-Prone Calculation: Manually calculating recall can introduce errors, while recall_score from sklearn is optimized and reliable.
+	
+	iv) In short, recall_score with average='weighted' is more comprehensive and reliable for multiclass or imbalanced data.

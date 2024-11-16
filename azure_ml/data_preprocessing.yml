@@ -1,0 +1,20 @@
+$schema: https://azuremlschemas.azureedge.net/latest/component.schema.json
+type: command
+
+name: Data Preprocessing
+description: Component for preprocessing data (e.g., imputation, scaling, encoding)
+inputs:
+  data_input:
+    type: uri_file
+    description: The input CSV data file.
+outputs:
+  preprocessed_data:
+    type: uri_folder
+    description: The folder where preprocessed data will be stored.
+code: ./data_preprocessing
+command: >
+  python data_preprocessing.py
+  --input_data ${{inputs.data_input}}
+  --output_data ${{outputs.preprocessed_data}}
+environment:
+  conda_file: ./env/environment.yml
