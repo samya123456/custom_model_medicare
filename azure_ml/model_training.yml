@@ -11,7 +11,7 @@ outputs:
   model_output:
     type: uri_folder
     description: Folder where the trained model will be saved.
-code: ./componentB
+code: ./model_training
 command: >
   python model_training.py
   --input_data ${{inputs.preprocessed_data}}
