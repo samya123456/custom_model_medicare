@@ -20,5 +20,16 @@ def fetch_data_from_snowflake():
     print(df.head())
 
 
-# Call the function to fetch data
-fetch_data_from_snowflake()
+def call_addone_function():
+    # Define the SQL to call the function
+    call_function_sql = "SELECT addone(5);"
+
+    # Call the function and get the result
+    result = SnowflakeUtil.call_function(call_function_sql)
+    print("Result of addone(5):", result)
+
+
+# Execute the function call
+call_addone_function()
+
+# fetch_data_from_snowflake()
