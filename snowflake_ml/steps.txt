@@ -1,3 +1,13 @@
 1) create DB MEDICARE ;
 2) load_date MEDICARE_TABLE;
 3) pip install snowflake-connector-python
+
+medicarestorageaccml
+
+https://medicarestorageaccml.blob.core.windows.net/
+
+DefaultEndpointsProtocol=https;AccountName=medicarestorageaccml;AccountKey=DwMWqEcsrCeVBZefG0aN1nDwwgjOrZLYoOaKtpMHLkRPE8l30n6QF54Ypd1JArtHO+h20mcNL92q+AStl+QJ2w==;EndpointSuffix=core.windows.net
+
+DwMWqEcsrCeVBZefG0aN1nDwwgjOrZLYoOaKtpMHLkRPE8l30n6QF54Ypd1JArtHO+h20mcNL92q+AStl+QJ2w==
+
+container : models

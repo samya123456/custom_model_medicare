@@ -32,10 +32,13 @@ class SnowflakeUtil:
     def call_function(sql_query):
         """Executes a SQL function call and returns the result."""
         conn = SnowflakeUtil.get_connection()
+
         try:
             with conn.cursor() as cur:
                 cur.execute(sql_query)
                 result = cur.fetchone()
                 return result[0] if result else None
+        except Exception as e:
+            print(e)
         finally:
             conn.close()

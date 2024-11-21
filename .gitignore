@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+/snowflake_ml/model/*
 # C extensions
 *.so
 /data
